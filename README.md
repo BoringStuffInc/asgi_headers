@@ -28,7 +28,7 @@ app.add_middleware(
     InjectHeadersMiddleware,
     injections={
         ("GET", "/hello"): {"This-Header-Will-Be-Injected-To-All-GET-Requests-Starting-With-/foo-path": 1},
-        ("*", "/hello", "This-Header-Will-Be-Injected-To-All-GET-Requests-Starting-With-/foo-path", "1")
+        ("*", "/hello", "This-Header-Will-Be-Injected-To-All-Requests-Starting-With-/foo-path", "1")
         ("GET", "*", "This-Header-Will-Be-Injected-To-All-GET-Requests", "1")
         ("*", "*", "This-Header-Will-Be-Injected-To-All-Requests", "1")
     }
@@ -55,7 +55,7 @@ app = Litestar(
         InjectHeadersMiddlewareFactory(
             injections={
                 ("GET", "/hello"): {"This-Header-Will-Be-Injected-To-All-GET-Requests-Starting-With-/foo-path": 1},
-                ("*", "/hello", "This-Header-Will-Be-Injected-To-All-GET-Requests-Starting-With-/foo-path", "1")
+                ("*", "/hello", "This-Header-Will-Be-Injected-To-All-Requests-Starting-With-/foo-path", "1")
                 ("GET", "*", "This-Header-Will-Be-Injected-To-All-GET-Requests", "1")
                 ("*", "*", "This-Header-Will-Be-Injected-To-All-Requests", "1")
             }
