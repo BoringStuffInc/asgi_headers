@@ -12,13 +12,27 @@ def app():
     _app.add_middleware(
         InjectHeadersMiddleware,
         injections={
-            ("*", "*"): { "X-Exists-In-All": "1", },
-            ("*", "/foo"): { "X-Exists-In-Foo": "1", },
-            ("GET", "*"): { "X-Exists-In-Get": "1", },
-            ("GET", "/foo"): { "X-Exists-In-Foo-Get": "1", },
-            ("POST", "/foo"): { "X-Exists-In-Foo-Post": "1", },
-            ("GET", "/foo/bar"): { "X-Exists-In-Foo-Bar": "1", },
-            ("GET", "/bar"): { "X-Already-Set": "1", },
+            ("*", "*"): {
+                "X-Exists-In-All": "1",
+            },
+            ("*", "/foo"): {
+                "X-Exists-In-Foo": "1",
+            },
+            ("GET", "*"): {
+                "X-Exists-In-Get": "1",
+            },
+            ("GET", "/foo"): {
+                "X-Exists-In-Foo-Get": "1",
+            },
+            ("POST", "/foo"): {
+                "X-Exists-In-Foo-Post": "1",
+            },
+            ("GET", "/foo/bar"): {
+                "X-Exists-In-Foo-Bar": "1",
+            },
+            ("GET", "/bar"): {
+                "X-Already-Set": "1",
+            },
         },
     )
 
